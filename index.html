@@ -66,8 +66,8 @@
       Eric Fernberg<br>
     </div>
       <ul>
-        <li class="slide">Detail 1</li>
-        <li class="slide">Detail 2</li>
+        <li class="slide"></li>
+        <li class="slide"></li>
       </ul>
   </section>
 
@@ -91,19 +91,71 @@
     <h2>Technology</h2>
     <ul>
       <li class="slide">Node.js</li>
-      <li class="slide">WebGL using CubicVR.js</li>
+      <li class="slide">CubicVR.js - WebGL</li>
+      <li class="slide">Ammo.js - Physics (based on bullet)</li>
       <li class="slide">Controller.js - GamepadAPI</li>
       <li class="slide">Depth.js - Kinect</li>
       <li class="slide">BeatDetektor.js - Firefox Beat Detection</li>
-      <li class="slide">Youtube</li>
+      <li class="slide">Youtube - Videos</li>
+      <li class="slide">Blender - 3D Models</li>
     </ul>
   </section>
 
   <section class="slide" style="font-size:60px">
-    <h2 class="slide">CubicVR.js</h2>
-    <pre>
-      
-    </pre>
+    <h2>CubicVR.js</h2>
+<pre style="font-size:30px">
+var scene = new CubicVR.Scene(canvas.width, canvas.height, 80);
+scene.bind( new CubicVR.Mesh({
+  primitive: {
+    type: "box",
+    material: {
+      textures: {
+        color: "../images/6583-diffuse.jpg"
+      }
+    },
+    uvmapper: {
+      projectionMode: "cubic",
+      scale: [1, 1, 1]
+    }
+  },
+  compile: true
+}));
+scene.camera.position = [1, 1, 1];
+scene.camera.target = [0, 0, 0];
+CubicVR.addResizeable(scene);
+CubicVR.MainLoop(function(timer, gl) {
+  scene.render();
+});
+</pre>
+  </section>
+
+  <section class="slide" style="font-size:60px">
+    <h2>Thanks To</h2>
+    <ul>
+      <li>Alistair MacDonald - 3D Model and Concept Development</li>
+      <li>Jake McKibben - Artwork and 3D Model Sketches</li>
+      <li>Ilya Shaisultanov - Youtube Proxy and Trig Help</li>
+      <li>CJ Cliffe - @ccliffe - CubicVR Help</li>
+      <li>IRC #paladin channel - Got us the latest nightly with gamepad support built</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Contact</h2>
+    <ul>
+      <li>Ryan Kahn
+        <ul>
+          <li>ryan@signedon.com</li>
+          <li>http://ryan-kahn.com</li>
+        </ul>
+      </li>
+      <li>
+        Eric Fernberg
+        <ul>
+          <li>efernie@signedon.com</li>
+        </ul>
+      </li>
+    </ul>
   </section>
 
 
